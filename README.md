@@ -12,3 +12,10 @@ I also moved a lot of stuff from individual header files into dat.h for macros, 
 the videos covering this can be found here;
 
 https://youtu.be/Xn4u_2wxOdE
+
+If you want to actually compile it and use it;
+put it in a directory under /sys/src/cmd/nusb
+use the appropriate compiler to compile each file
+link it all togather with the standard usb library like so (this is with the 6c and 6l for amd64)
+'6l rtlfm.6 librtlsdr.6 tuner_e4k.6 tuner_fc0012.6 tuner_fc0013.6 tuner_fc2580.6 tuner_r82xx.6 ../lib/usb.a6'
+if you don't have the ../lib/usb.a6 file, go to /sys/src/cmd/nusb/lib and run mk to build the library.
